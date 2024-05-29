@@ -14,6 +14,8 @@ namespace OOP___Projekt_i_grupp___Code_Crusades__SUT23_
         {
             bool IsAdmin = UserContext.CurrentUser.Role;
             List<string> Menulist = new List<string>();
+            var userService = new UserService();
+            var createUser = new CreateUser(userService);
 
             if (IsAdmin == true)
             {
@@ -27,7 +29,7 @@ namespace OOP___Projekt_i_grupp___Code_Crusades__SUT23_
                     switch (menuSelected)
                     {
                         case 0:
-                            CreateUser.AddUser();
+                            createUser.AddUser();
                             break;
                         case 1:
                             ExchangeRate.SetExchangeRate();
@@ -65,7 +67,7 @@ namespace OOP___Projekt_i_grupp___Code_Crusades__SUT23_
                     switch (menuSelected)
                     {
                         case 0:
-                            Accounts.PrintAcc();
+                            Accounts.PrintAcc(Console.ReadKey);
                             break;
                         case 1:
                             Transfer.TransferMoney();
@@ -83,7 +85,11 @@ namespace OOP___Projekt_i_grupp___Code_Crusades__SUT23_
                             UserContext.CurrentUser.PrintTransferHistory();
                             break;
                         case 6:
-                            RequestLoan.Loan();
+                            var userContext = UserContext.CurrentUser; // Assuming UserContext is static
+                            Func<string> readLine = Console.ReadLine;
+                            Action<string> writeLine = Console.WriteLine;
+                            Action clear = Console.Clear;
+                            RequestLoan.Loan(UserContext.CurrentUser, readLine, writeLine, clear);
                             break;
                         case 7:
                             Console.WriteLine("\n\tDu loggas ut" +

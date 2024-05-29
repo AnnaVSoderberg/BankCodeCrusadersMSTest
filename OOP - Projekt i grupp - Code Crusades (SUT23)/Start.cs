@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP___Projekt_i_grupp___Code_Crusades__SUT23_
 {
-    internal class Start
+    public class Start
     {
         public static List<User> CustomerList { get; set; }
 

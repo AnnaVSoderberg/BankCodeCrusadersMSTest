@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace test
 {
-    internal class UserContext
+    public class UserContext
     {
         public static User CurrentUser { get; set; }
         public static User TargetUser { get; set; }

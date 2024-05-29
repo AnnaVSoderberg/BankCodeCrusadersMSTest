@@ -8,7 +8,7 @@ using test;
 
 namespace OOP___Projekt_i_grupp___Code_Crusades__SUT23_
 {
-    internal class CheckingAccount : Accounts
+    public class CheckingAccount : Accounts
     {
         public CheckingAccount(string name, decimal balance, string currency) : base(name, balance, currency)
         {}

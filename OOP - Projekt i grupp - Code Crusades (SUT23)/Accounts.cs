@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,15 +20,26 @@ namespace OOP___Projekt_i_grupp___Code_Crusades__SUT23_
             Balance = balance;
             Currency = currency;
         }
-        public static void PrintAcc()
-        {
-            Console.WriteLine("\n\tDina konton & saldo:");
 
-            foreach (var account in UserContext.CurrentUser.Accounts)
+        public static string GetAccountSummary(User user)
+        {
+            var output = new StringWriter();
+            output.WriteLine("\n\tDina konton & saldo:");
+
+            foreach (var account in user.Accounts)
             {
-                Console.WriteLine($"\n\t{account.Name}: {Math.Round(account.Balance, 2)} {account.Currency}");
+                string formattedBalance = account.Balance.ToString("F2", CultureInfo.InvariantCulture);
+                output.WriteLine($"\n\t{account.Name}: {formattedBalance} {account.Currency}");
             }
-            Console.ReadKey();
+
+            return output.ToString();
+        }
+
+        public static void PrintAcc(Func<ConsoleKeyInfo> readKey)
+        {
+            var summary = GetAccountSummary(UserContext.CurrentUser);
+            Console.WriteLine(summary);
+            readKey();
         }
     }
 }
