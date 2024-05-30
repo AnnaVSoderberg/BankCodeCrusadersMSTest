@@ -1,3 +1,35 @@
+Jag har valt att skapa tester för:
+UserService - skriv ut konton
+   Att korreta värden sparas vid skapandet av en ny användare
+   Att det inte går att skapa ny användare när UserName eller pin aningen är tomt eller Null
+   Att ny användare korrekt läggs till i listan av användare
+RequestLoan
+   Att räntan beräknas korrekt
+   Att det går att ta ett lån och att detta läggs in på kundens konto
+   Att det inte går att ta ett lån över 5*ditt kapital
+   att uppdaterad ränta slår igenom korrekt
+Account
+   Att korrekt information skrivs ut för inga konton, ett konto och flera konton
+   Att summan på kontot skrivs ut för negativa värde, positiva värden och noll värde
+   Att olika valutor skrivs ut korrekt
+
+
+UserService
+   Ensuring that correct values are saved when creating a new user.
+   Verifying that a new user cannot be created when the username or pin is either empty or null.
+   Confirming that a new user is correctly added to the list of users.
+RequestLoan
+   Ensuring that the interest is calculated correctly.
+   Verifying that a loan can be taken out and that it is deposited into the customer's account.
+   Confirming that a loan cannot be taken out for an amount greater than 5 times the user's capital.
+   Ensuring that the updated interest rate is applied correctly.
+Account
+   Ensuring that the correct information is displayed for no accounts, a single account, and multiple accounts.
+   Verifying that the account balance is displayed correctly for negative values, positive values, and zero balance.
+   Confirming that different currencies are displayed correctly.
+
+
+   
 The Code-crusader bank is a group project for school. The program is coded in C# in .NET. It's a program that resembles a simple bank system.
 There are seventeen different classes in our program.
 
