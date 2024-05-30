@@ -14,6 +14,7 @@ namespace OOP_CodeCrusadersMSTest
     public class RequestLoanTests
     {
         [TestMethod] //OK
+        [Description("Verifies that the CalculateInterest method correctly calculates the interest based on the given loan amount and current interest rate.")]
         public void CalculateInterest_ShouldReturnCorrectInterest()
         {
             // Arrange
@@ -27,7 +28,8 @@ namespace OOP_CodeCrusadersMSTest
             Assert.AreEqual(expectedInterest, actualInterest);
         }
 
-        [TestMethod]
+        [TestMethod] //OK
+        [Description("Ensures that a valid loan request adds the loan to the user's account and clears the input screen.")]
         public void Loan_ValidLoanRequest_ShouldAddLoanToUser()
         {
             // Arrange
@@ -58,7 +60,8 @@ namespace OOP_CodeCrusadersMSTest
         }
 
 
-        [TestMethod]
+        [TestMethod] //OK
+        [Description("Verifies that a loan exceeding the maximum allowed amount is rejected, but a valid subsequent loan request is accepted.")]
         public void Loan_ExceedingMaximumLoan_ShouldNotAddExceedingLoanButAddValidLoan()
         {
             // Arrange
@@ -107,6 +110,7 @@ namespace OOP_CodeCrusadersMSTest
 
 
         [TestMethod]
+        [Description("Ensures that the loan amount is deposited into the selected account and that the input screen is cleared.")]
         public void DepositLoan_ShouldDepositAmountIntoSelectedAccount()
         {
             // Arrange
@@ -137,6 +141,7 @@ namespace OOP_CodeCrusadersMSTest
         } 
 
         [TestMethod] //OK
+        [Description("Verifies that the interest rate is correctly updated when a valid input is provided.")]
         public void UpdateInterest_ValidInput_ShouldUpdateInterestRate()
         {
             // Arrange
@@ -155,6 +160,7 @@ namespace OOP_CodeCrusadersMSTest
         }
 
         [TestMethod] //OK
+        [Description("Ensures that the interest rate is not updated when an invalid input is provided and that an error message is displayed.")]
         public void UpdateInterest_InvalidInput_ShouldNotUpdateInterestRate()
         {
             // Arrange

@@ -28,6 +28,7 @@ namespace OOP_CodeCrusadersMSTest
             Assert.IsNotNull(newUser.Loans);
             Assert.IsNotNull(newUser.TransferLogs);
         }
+
         [TestMethod]
         [Description("CreateUser should throw ArgumentException when username is empty.")]
         [ExpectedException(typeof(ArgumentException))]

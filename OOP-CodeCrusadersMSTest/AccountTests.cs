@@ -14,6 +14,7 @@ namespace OOP_CodeCrusadersMSTest
     public class AccountsTests
     {
         [TestMethod]
+        [Description("Verifies that the account summary includes all accounts and their balances for a user with multiple accounts.")]
         public void GetAccountSummaryTests()
         {
             // Arrange
@@ -32,6 +33,7 @@ namespace OOP_CodeCrusadersMSTest
         }
 
         [TestMethod]
+        [Description("Verifies that the account summary correctly displays a single account and its balance.")]
         public void TestGetAccountSummary_SingleAccount()
         {
             // Arrange
@@ -48,6 +50,7 @@ namespace OOP_CodeCrusadersMSTest
         }
 
         [TestMethod]
+        [Description("Verifies that the account summary correctly displays an account with a zero balance.")]
         public void TestGetAccountSummary_ZeroBalance()
         {
             // Arrange
@@ -64,6 +67,8 @@ namespace OOP_CodeCrusadersMSTest
         }
 
         [TestMethod]
+        [Description("Verifies that the account summary correctly displays an account with a negative balance.")]
+        //Bör Felhanteras!
         public void TestGetAccountSummary_NegativeBalance()
         {
             // Arrange
@@ -80,6 +85,7 @@ namespace OOP_CodeCrusadersMSTest
         }
 
         [TestMethod]
+        [Description("Verifies that the account summary correctly displays accounts with different currencies.")]
         public void TestGetAccountSummary_DifferentCurrencies()
         {
             // Arrange
@@ -100,6 +106,7 @@ namespace OOP_CodeCrusadersMSTest
         }
 
         [TestMethod]
+        [Description("Verifies that the account summary correctly handles a user with no accounts.")]
         public void TestGetAccountSummary_NoAccounts()
         {
             // Arrange
